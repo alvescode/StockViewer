@@ -1,0 +1,17 @@
+.loadMore4_button {
+    background-color: white; 
+    color: #000; 
+    padding: 10px 20px; 
+    margin: 15px auto;
+    border: 1px solid #000;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: .75 rem; 
+    box-shadow: 0 4px 8px rebeccapurple; 
+  }
+
+  .loadMore4_button:hover{
+    box-shadow: 0 4px 8px white; 
+    background-color: rebeccapurple;
+    color: white;
+  }

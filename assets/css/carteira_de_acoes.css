@@ -1,0 +1,97 @@
+ul{
+    display: grid;
+    grid-template-columns:  1fr;
+    padding: 0;
+    place-items: center;
+  }
+  
+  /* media screens */
+  @media screen and (min-width: 400px) { 
+    ul{
+      grid-template-columns: 1fr 1fr;
+    }  
+  }
+  
+  @media screen and (min-width: 606px) {
+    ul{
+      grid-template-columns: 1fr 1fr 1fr;
+    }  
+  }
+  
+  @media screen and (min-width: 800px) {
+    ul{
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }  
+  }
+  
+  @media screen and (min-width: 1100px) {
+    ul{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }  
+  }
+  
+  @media screen and (min-width: 1410px) {
+    ul{
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }  
+  }
+
+  .stock_card{
+    background-color: #412583;
+    border-radius: 0.5rem;
+    display: flex;flex-direction: column;align-items: center;justify-content: center;
+    list-style: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 90%;
+    height: 90%;
+    max-width: 280px; /* RESPONSIVIDADE DO CARD */ 
+    min-width: 160px; /* RESPONSIVIDADE DO CARD */ 
+    /* RESPOSIVIDADE DA ALTURA PRECISA SER FEITA */
+    min-height: 188.2px;
+    box-shadow: 0 4px 8px black;
+  }
+  
+  .stock_card:hover{
+    /* TEMP*/
+    background-color: #222222;
+    color: #F4F4F8;
+    border: 1px solid white;  
+    /* ajustar após aula de border dio */
+    border-top-width: 0px;
+    border-left-width: 0px;
+    box-shadow: 0 4px 8px whitesmoke; /* Sombra 0 2px 6px */
+
+  }
+  
+  .stock_card .header{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    justify-content: center;
+    margin-top:1rem;
+  }
+  
+  .stock_card .details{
+    display:flex;
+    align-items:baseline;
+    justify-content: space-between;
+  }
+  
+  .stock_card .img {
+    border-style: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-right: 0.5rem;
+    /* object-fit: contain; para imagens maiores que o container . Fazer testes com várias ações */
+  }
+
+  .arrow_img{
+    border-style: none;
+    height: 15px;
+    width: 15px;
+    margin: 0px;
+    padding: 0px;
+  }
+  
