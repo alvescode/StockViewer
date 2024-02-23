@@ -20,7 +20,7 @@ class StockCard{
     convertToHTMLCard(){
 
         const color = this.acaoSubiu ? '#3cff3e':'#f14251';
-        const flecha = this.acaoSubiu ? '/assets/images/arrow_up.png':'/assets/images/arrow_down.png'
+        const flecha = this.acaoSubiu ? 'assets/images/arrow_up.png':'assets/images/arrow_down.png'
         return(
             `
         <li class="stock_card">
