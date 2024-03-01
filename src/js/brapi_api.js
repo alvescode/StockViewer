@@ -10,15 +10,17 @@ const brapi = {
     getAvailableStocks : async function (){
         try{
             const response = await fetch(base_url+`available`)
-            const responseJSON = await response.json();
+            const responseJSON = await response.json(); //Promise.all()
             const {stocks} = responseJSON
+            stocks[9] = "CRIV4"
+            stocks[22]="BRGE12"
+            stocks[24]="BRIV4"
             return(stocks)
         }
         catch(err){
             return(err)
         }
     }
-
     
     ,
     

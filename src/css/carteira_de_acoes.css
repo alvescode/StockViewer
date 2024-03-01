@@ -47,20 +47,17 @@ ul{
     height: 90%;
     max-width: 280px; /* RESPONSIVIDADE DO CARD */ 
     min-width: 160px; /* RESPONSIVIDADE DO CARD */ 
-    /* RESPOSIVIDADE DA ALTURA PRECISA SER FEITA */
     min-height: 188.2px;
     box-shadow: 0 4px 8px black;
   }
   
   .stock_card:hover{
-    /* TEMP*/
     background-color: #222222;
     color: #F4F4F8;
     border: 1px solid white;  
-    /* ajustar após aula de border dio */
     border-top-width: 0px;
     border-left-width: 0px;
-    box-shadow: 0 4px 8px whitesmoke; /* Sombra 0 2px 6px */
+    box-shadow: 0 4px 8px whitesmoke;
 
   }
   
@@ -84,7 +81,6 @@ ul{
     height: 50px;
     width: 50px;
     margin-right: 0.5rem;
-    /* object-fit: contain; para imagens maiores que o container . Fazer testes com várias ações */
   }
 
   .arrow_img{
