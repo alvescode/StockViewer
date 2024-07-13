@@ -1,30 +1,44 @@
-class StockCard{
-    //Cria o modelo contendo dados ajustados da API e dados relevantes para o site.
+class StockCard {
+  //Cria o modelo contendo dados ajustados da API e dados relevantes para o site.
 
-    constructor(props){
-        const {longName,twoHundredAverageDay,marketCap,regularMarketChangePercent,regularMarketDayLow,regularMarketDayHigh,regularMarketOpen,earningsPerShare,logourl,shortName,regularMarketPrice,symbol} = props;
-        this.stock_name_long = longName.replace(/ S\.A\./g,''); //Remove qualquer ocorrência de "S.A." no nome da ação
-        this.stock_name_short = shortName;
-        this.ticker = symbol;
-        this.cotacao = parseFloat(regularMarketPrice).toFixed(2);
-        this.variacao = regularMarketChangePercent.toFixed(2);
-        this.image = logourl;
-        this.acaoSubiu =  this.variacao > 0 ? true : false ;
-        this.lpa = earningsPerShare!==null? parseFloat(earningsPerShare).toFixed(2):'';
-        this.abertura = regularMarketOpen;
-        this.maxima = regularMarketDayHigh;
-        this.minima = regularMarketDayLow;
-        this.valor_de_mercado = marketCap;
-        this.media200d = twoHundredAverageDay;
-    } 
+  constructor(props) {
+    const {
+      longName,
+      twoHundredAverageDay,
+      marketCap,
+      regularMarketChangePercent,
+      regularMarketDayLow,
+      regularMarketDayHigh,
+      regularMarketOpen,
+      earningsPerShare,
+      logourl,
+      shortName,
+      regularMarketPrice,
+      symbol,
+    } = props;
+    this.stock_name_long = longName ? longName.replace(/ S\.A\./g, "") : ""; //Remove qualquer ocorrência de "S.A." no nome da ação
+    this.stock_name_short = shortName;
+    this.ticker = symbol;
+    this.cotacao = parseFloat(regularMarketPrice).toFixed(2);
+    this.variacao = regularMarketChangePercent.toFixed(2);
+    this.image = logourl;
+    this.acaoSubiu = this.variacao > 0 ? true : false;
+    this.lpa =
+      earningsPerShare !== null ? parseFloat(earningsPerShare).toFixed(2) : "";
+    this.abertura = regularMarketOpen;
+    this.maxima = regularMarketDayHigh;
+    this.minima = regularMarketDayLow;
+    this.valor_de_mercado = marketCap;
+    this.media200d = twoHundredAverageDay;
+  }
 
-    convertToHTMLCard(){
+  convertToHTMLCard() {
+    const color = this.acaoSubiu ? "#3cff3e" : "#f14251";
+    const flecha = this.acaoSubiu
+      ? "images/arrow_up.png"
+      : "images/arrow_down.png";
 
-        const color = this.acaoSubiu ? '#3cff3e':'#f14251';
-        const flecha = this.acaoSubiu ? 'images/arrow_up.png':'images/arrow_down.png'
-
-        return(
-            `
+    return `
         <li class="stock_card" id="${this.ticker}">
             <div class="header">
                 <div>
@@ -41,12 +55,8 @@ class StockCard{
                     </div>        
                 </div>
             </div>
-            <div class="details">
-                <p id="ticker">${this.ticker}</p>
-                <button class="button abrir" style="margin-left:30px;">Ver Mais</button>
-            </div>
+            
         </li>
-        `
-        )
-    }
+        `;
+  }
 }
